@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
 
 const projects = [
@@ -54,47 +54,47 @@ const projects = [
   }
 ];
 
-const ProjectCard = ({ project }: { project: typeof projects[0], key?: string }) => {
+const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
-        "group relative rounded-2xl overflow-hidden bg-brand-dark aspect-video md:aspect-auto cursor-pointer",
-        project.size === 'large' ? "md:col-span-2 md:h-[600px]" : 
-        project.size === 'full' ? "md:col-span-3 md:h-[500px]" : 
-        "md:col-span-1 md:h-[400px]"
+        'group relative aspect-video cursor-pointer overflow-hidden rounded-[24px] bg-brand-dark md:aspect-auto',
+        project.size === 'large' ? 'md:col-span-2 md:h-[520px] lg:h-[560px]' :
+        project.size === 'full' ? 'md:col-span-3 md:h-[480px] lg:h-[520px]' :
+        'md:col-span-1 md:h-[440px]'
       )}
     >
-      {/* Background Image */}
-      <img 
-        src={project.image} 
+      <img
+        src={project.image}
         alt={project.title}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
         referrerPolicy="no-referrer"
       />
-      
-      {/* Video Overlay on Hover */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
-        <video 
-          src={project.video} 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          className="w-full h-full object-cover"
+
+      <div className="absolute inset-0 overflow-hidden opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+        <video
+          src={project.video}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="h-full w-full object-cover"
         />
       </div>
 
-      {/* Content Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent p-6 md:p-10 flex flex-col justify-end">
+      <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-brand-dark/84 via-brand-dark/10 to-transparent p-6 md:p-8 lg:p-10">
         <div className="flex flex-col gap-4">
-          <h3 className="text-2xl md:text-3xl font-medium text-brand-offwhite tracking-tight">{project.title}</h3>
+          <h3 className="text-xl tracking-[-0.05em] text-brand-offwhite md:text-[1.75rem]">{project.title}</h3>
           <div className="flex flex-wrap gap-2">
-            {project.tags.map(tag => (
-              <span key={tag} className="px-3 py-1 bg-brand-orange/20 backdrop-blur-md border border-brand-orange/30 rounded-full text-[10px] font-mono uppercase tracking-wider text-brand-offwhite">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-white/18 bg-black/24 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-brand-offwhite backdrop-blur-md"
+              >
                 {tag}
               </span>
             ))}
@@ -107,26 +107,16 @@ const ProjectCard = ({ project }: { project: typeof projects[0], key?: string })
 
 export const FeaturedWork = () => {
   return (
-    <section id="portfolio" className="py-32 bg-brand-beige">
-      <div className="w-full px-11 md:px-[52px] lg:px-[68px]">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              <span className="text-brand-grey font-mono text-[10px] uppercase tracking-widest">( Featured Work )</span>
-              <div className="w-4 h-px bg-brand-grey/30" />
-            </div>
-            <h2 className="text-5xl md:text-7xl font-medium tracking-tighter text-brand-dark">
-              Featured Work
-            </h2>
-          </div>
-          
-          <button className="group flex items-center gap-2 bg-brand-orange text-brand-offwhite px-6 py-3 rounded-xl font-mono text-xs uppercase tracking-wider hover:bg-brand-orange-deep transition-all duration-300 shadow-[0_14px_34px_rgba(179,39,44,0.2)]">
-            <span>All Work</span>
-            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-          </button>
+    <section id="portfolio" className="bg-brand-beige px-3 py-14 md:px-5 md:py-20">
+      <div className="mx-auto w-full max-w-[2048px]">
+        <div className="mb-12 flex items-center gap-4">
+          <h2 className="text-[clamp(2.8rem,6vw,5rem)] leading-[0.94] tracking-[-0.08em] text-brand-dark">
+            Featured Work
+          </h2>
+          <ArrowDown size={28} className="mt-2 text-brand-dark" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}

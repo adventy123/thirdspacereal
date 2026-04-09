@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { ArrowDown } from 'lucide-react';
 
 const logos = [
   { name: 'Kimfu', url: 'https://framerusercontent.com/images/54ipZYE0Xs5Fw2s8RRC1Xw5MwOU.png' },
@@ -13,29 +13,26 @@ const logos = [
 
 export const LogoTicker = () => {
   return (
-    <div className="py-20 bg-brand-beige overflow-hidden">
-      <div className="w-full px-11 md:px-[52px] lg:px-[68px] mb-12 flex items-center gap-3">
-        <span className="text-brand-grey font-mono text-[10px] uppercase tracking-widest">( Moving Forward )</span>
-        <div className="w-4 h-px bg-brand-grey/30" />
-      </div>
-      
-      <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-        <motion.div 
-          animate={{ x: "-50%" }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          className="flex flex-none gap-24 pr-24 items-center"
-        >
-          {[...logos, ...logos].map((logo, index) => (
-            <img 
-              key={index}
-              src={logo.url} 
-              alt={logo.name} 
-              className="h-8 md:h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
-              referrerPolicy="no-referrer"
-            />
+    <section className="overflow-hidden bg-brand-beige px-3 py-[4.5rem] md:px-5 md:py-24">
+      <div className="mx-auto max-w-[2048px]">
+        <div className="mb-12 flex items-center gap-3 px-2">
+          <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-brand-grey">[ Moving Forward ]</span>
+          <ArrowDown size={12} className="text-brand-grey/80" />
+        </div>
+
+        <div className="grid grid-cols-2 items-center gap-x-10 gap-y-10 sm:grid-cols-4 lg:flex lg:justify-between lg:gap-14">
+          {logos.map((logo) => (
+            <div key={logo.name} className="flex items-center justify-center lg:flex-1">
+              <img
+                src={logo.url}
+                alt={logo.name}
+                className="h-8 w-auto grayscale opacity-38 transition-all duration-500 hover:opacity-100 hover:grayscale-0 md:h-10"
+                referrerPolicy="no-referrer"
+              />
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };

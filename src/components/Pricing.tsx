@@ -1,139 +1,93 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Check, ArrowRight } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
-const pricingPlans = [
+const studioIndex = [
   {
-    name: 'Branding',
-    price: '5,000',
-    description: 'Perfect for startups looking to establish a strong visual foundation.',
-    features: [
-      'Visual Identity System',
-      'Logo Design & Variations',
-      'Typography & Color Palette',
-      'Brand Style Guidelines',
-      'Social Media Assets',
-      '2-3 Weeks Delivery'
-    ],
-    cta: 'Start Branding',
-    popular: false
+    title: 'Brand Strategy',
+    scope: 'Positioning, voice, architecture, and launch planning.',
+    focus: 'For new launches, bold rebrands, and teams that need clarity fast.',
+    timeline: '/ 02-04 weeks',
   },
   {
-    name: 'Digital',
-    price: '12,000',
-    description: 'High-end web experiences that convert and tell your brand story.',
-    features: [
-      'Custom Web Design',
-      'Framer / Webflow Development',
-      'Motion & Interactions',
-      'SEO Optimization',
-      'CMS Integration',
-      '4-6 Weeks Delivery'
-    ],
-    cta: 'Build My Site',
-    popular: true
+    title: 'Identity Systems',
+    scope: 'Logos, typography, color systems, and scalable design kits.',
+    focus: 'For brands that want consistency across every touchpoint.',
+    timeline: '/ 03-05 weeks',
   },
   {
-    name: 'Full Studio',
-    price: '25,000',
-    description: 'The complete package for brands ready to dominate their market.',
-    features: [
-      'Full Brand Identity',
-      'Premium Web Experience',
-      'Custom Motion Systems',
-      'Content Strategy',
-      '3 Months Support',
-      '8-12 Weeks Delivery'
-    ],
-    cta: 'Partner with Us',
-    popular: false
-  }
+    title: 'Web Experiences',
+    scope: 'Custom sites with motion, narrative structure, and CMS support.',
+    focus: 'For launches, campaigns, and digital homes built to convert.',
+    timeline: '/ 04-08 weeks',
+  },
+  {
+    title: 'Motion Direction',
+    scope: '2D, 3D, transitions, loops, and product storytelling assets.',
+    focus: 'For brands that need movement baked into the system, not added later.',
+    timeline: '/ 02-06 weeks',
+  },
+  {
+    title: 'Campaign Assets',
+    scope: 'Launch visuals, social cutdowns, display graphics, and toolkits.',
+    focus: 'For teams moving quickly across paid, organic, and owned channels.',
+    timeline: '/ 01-03 weeks',
+  },
+  {
+    title: 'Creative Retainers',
+    scope: 'Ongoing design support for iteration, updates, and new releases.',
+    focus: 'For companies that need a steady studio partner after launch.',
+    timeline: '/ Monthly',
+  },
 ];
 
-export const Pricing = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
+export const Pricing = ({ onOpenQuote: _onOpenQuote }: { onOpenQuote: () => void }) => {
   return (
-    <section id="pricing" className="py-32 bg-brand-beige">
-      <div className="w-full px-11 md:px-[52px] lg:px-[68px]">
-        <div className="flex flex-col gap-12 mb-20">
-          <div className="flex items-center gap-3">
-            <span className="text-brand-grey font-mono text-[10px] uppercase tracking-widest">( Investment )</span>
-            <div className="w-4 h-px bg-brand-grey/30" />
-          </div>
-          <div className="flex flex-col gap-4">
-            <h2 className="text-5xl md:text-7xl font-medium tracking-tighter text-brand-dark leading-[0.9]">
-              Transparent Pricing.<br />
-              No Hidden BS.
-            </h2>
-            <p className="text-brand-grey max-w-xl">
-              We believe in clear communication and fair value. Choose a plan that fits your current stage or reach out for a custom execution.
-            </p>
-          </div>
+    <section id="index" className="bg-brand-beige px-3 py-28 md:px-5 md:py-32">
+      <div className="mx-auto max-w-[2048px]">
+        <div className="mb-12 flex items-center gap-3 px-2">
+          <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-brand-grey">[ Studio Index ]</span>
+          <ArrowDown size={12} className="text-brand-grey/80" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {pricingPlans.map((plan, index) => (
+        <div className="mb-14 flex flex-col gap-4 px-2">
+          <h2 className="max-w-[10ch] text-[clamp(3rem,6vw,5.6rem)] leading-[0.92] tracking-[-0.08em] text-brand-dark">
+            We Build For Longevity<span className="text-brand-orange">.</span>
+          </h2>
+          <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-brand-orange">
+            *Not for templates
+          </p>
+        </div>
+
+        <div className="hidden border-b border-black/10 px-2 pb-4 font-mono text-[10px] uppercase tracking-[0.22em] text-black/36 lg:grid lg:grid-cols-[1.05fr_1.45fr_1.3fr_auto] lg:gap-8">
+          <span>Focus</span>
+          <span>Scope</span>
+          <span>Best For</span>
+          <span>Timing</span>
+        </div>
+
+        <div className="mt-2 flex flex-col">
+          {studioIndex.map((item, index) => (
             <motion.div
-              key={plan.name}
-              initial={{ opacity: 0, y: 20 }}
+              key={item.title}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative flex flex-col p-8 rounded-3xl border ${
-                plan.popular 
-                  ? 'bg-brand-orange border-brand-orange shadow-2xl scale-105 z-10' 
-                  : 'bg-white border-black/5'
-              }`}
+              transition={{ duration: 0.45, delay: index * 0.04 }}
+              className="grid gap-4 border-b border-black/10 px-2 py-6 lg:grid-cols-[1.05fr_1.45fr_1.3fr_auto] lg:gap-8 lg:py-7"
             >
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-orange text-white px-4 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest">
-                  Most Popular
-                </div>
-              )}
-
-              <div className="mb-8">
-                <h3 className={`text-xl font-medium mb-2 ${plan.popular ? 'text-brand-offwhite' : 'text-brand-dark'}`}>
-                  {plan.name}
-                </h3>
-                <div className="flex items-baseline gap-1">
-                  <span className={`text-sm font-mono ${plan.popular ? 'text-white/72' : 'text-brand-grey'}`}>From</span>
-                  <span className={`text-4xl font-medium tracking-tighter ${plan.popular ? 'text-brand-offwhite' : 'text-brand-dark'}`}>
-                    ${plan.price}
-                  </span>
-                </div>
-                <p className={`mt-4 text-sm leading-relaxed ${plan.popular ? 'text-white/76' : 'text-brand-grey'}`}>
-                  {plan.description}
-                </p>
+              <div className="text-[1.45rem] leading-none tracking-[-0.05em] text-brand-dark">
+                {item.title}
               </div>
-
-              <div className="flex-grow flex flex-col gap-4 mb-10">
-                <span className={`text-[10px] font-mono uppercase tracking-widest ${plan.popular ? 'text-white/72' : 'text-brand-grey'}`}>
-                  What's included:
-                </span>
-                <ul className="flex flex-col gap-3">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3">
-                      <div className={`flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${plan.popular ? 'bg-white/18 text-white' : 'bg-brand-orange/10 text-brand-orange'}`}>
-                        <Check size={10} />
-                      </div>
-                      <span className={`text-xs ${plan.popular ? 'text-brand-offwhite' : 'text-brand-dark'}`}>
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+              <p className="text-sm leading-relaxed text-black/56">
+                {item.scope}
+              </p>
+              <p className="text-sm leading-relaxed text-black/56">
+                {item.focus}
+              </p>
+              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-black/42 lg:text-right">
+                {item.timeline}
               </div>
-
-              <button
-                onClick={onOpenQuote}
-                className={`group flex items-center justify-center gap-2 w-full py-4 rounded-2xl font-mono text-[10px] uppercase tracking-widest transition-all duration-300 ${
-                  plan.popular
-                    ? 'bg-brand-offwhite text-brand-dark hover:bg-brand-orange-deep hover:text-white'
-                    : 'bg-brand-orange text-brand-offwhite hover:bg-brand-orange-deep'
-                }`}
-              >
-                <span>{plan.cta}</span>
-                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </button>
             </motion.div>
           ))}
         </div>

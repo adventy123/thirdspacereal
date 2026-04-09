@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { Instagram, Linkedin, ArrowUpRight } from 'lucide-react';
 
 export const Footer = () => {
@@ -11,7 +10,7 @@ export const Footer = () => {
       { name: 'Work', href: '#portfolio' },
       { name: 'Services', href: '#services' },
       { name: 'About Us', href: '#about-us' },
-      { name: 'Store', href: '#' },
+      { name: 'Index', href: '#index' },
     ],
     terms: [
       { name: 'License Agreement', href: '#' },
@@ -32,61 +31,59 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-[linear-gradient(180deg,#141414_0%,#251214_38%,#141414_100%)] px-8 lg:px-12 pt-16 pb-8 md:pt-24 min-h-[50vh] flex flex-col justify-between border-t border-brand-orange/20">
-      <div className="w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Brand Info */}
-          <div className="lg:col-span-4 flex flex-col gap-6">
-            <h2 className="text-3xl md:text-4xl text-brand-offwhite font-medium tracking-tight">ThirdSpace</h2>
-            <div className="flex flex-col gap-2">
-              <p className="text-brand-grey text-sm">Los Angeles, California</p>
-              <a href="mailto:hello@thirdspace.com" className="text-brand-grey hover:text-brand-orange transition-colors text-sm">
+    <footer className="bg-brand-beige px-3 pb-3 md:px-5 md:pb-5">
+      <div className="flex min-h-[420px] flex-col justify-between rounded-[28px] bg-brand-dark px-6 py-10 md:px-8 md:py-12 lg:px-10">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+          <div className="flex flex-col gap-5 lg:col-span-4">
+            <h2 className="text-[clamp(2rem,4vw,3rem)] leading-none tracking-[-0.06em] text-brand-offwhite">ThirdSpace Studio.</h2>
+            <div className="flex flex-col gap-1 text-sm text-white/62">
+              <p>Los Angeles, California</p>
+              <a href="mailto:hello@thirdspace.com" className="transition-colors hover:text-brand-offwhite">
                 hello@thirdspace.com
               </a>
             </div>
           </div>
 
-          {/* Links Grid */}
-          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-12">
+          <div className="grid grid-cols-2 gap-10 md:grid-cols-4 lg:col-span-8">
             <div className="flex flex-col gap-6">
-              <span className="text-brand-offwhite font-medium text-sm">Index</span>
+              <span className="text-sm text-brand-offwhite">Index</span>
               <ul className="flex flex-col gap-3">
-                {links.index.map(link => (
+                {links.index.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-brand-grey hover:text-brand-orange transition-colors text-sm">{link.name}</a>
+                    <a href={link.href} className="text-sm text-white/56 transition-colors hover:text-brand-offwhite">{link.name}</a>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="flex flex-col gap-6">
-              <span className="text-brand-offwhite font-medium text-sm">Terms & Policies</span>
+              <span className="text-sm text-brand-offwhite">Terms & Policies</span>
               <ul className="flex flex-col gap-3">
-                {links.terms.map(link => (
+                {links.terms.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-brand-grey hover:text-brand-orange transition-colors text-sm">{link.name}</a>
+                    <a href={link.href} className="text-sm text-white/56 transition-colors hover:text-brand-offwhite">{link.name}</a>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="flex flex-col gap-6">
-              <span className="text-brand-offwhite font-medium text-sm">Digital Store</span>
+              <span className="text-sm text-brand-offwhite">Digital Store</span>
               <ul className="flex flex-col gap-3">
-                {links.store.map(link => (
+                {links.store.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-brand-grey hover:text-brand-orange transition-colors text-sm">{link.name}</a>
+                    <a href={link.href} className="text-sm text-white/56 transition-colors hover:text-brand-offwhite">{link.name}</a>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="flex flex-col gap-6">
-              <span className="text-brand-offwhite font-medium text-sm">Socials</span>
+              <span className="text-sm text-brand-offwhite">Socials</span>
               <ul className="flex flex-col gap-3">
-                {links.socials.map(link => (
+                {links.socials.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="flex items-center gap-2 text-brand-grey hover:text-brand-orange transition-colors text-sm">
+                    <a href={link.href} className="flex items-center gap-2 text-sm text-white/56 transition-colors hover:text-brand-offwhite">
                       <span>{link.name}</span>
                       {link.icon}
                     </a>
@@ -97,12 +94,11 @@ export const Footer = () => {
           </div>
         </div>
 
-      </div>
-
-      <div className="flex flex-col pt-12 mt-24">
-        <p className="text-brand-grey text-xs">
-          © {currentYear} ThirdSpace. All rights reserved.
-        </p>
+        <div className="mt-20 pt-12">
+          <p className="text-xs text-white/58">
+            &copy; {currentYear} ThirdSpace. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );
