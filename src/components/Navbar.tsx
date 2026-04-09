@@ -28,10 +28,10 @@ export const Navbar = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
     <nav className="pointer-events-none fixed left-0 right-0 top-0 z-50 px-3 pt-3 md:px-5 md:pt-5">
       <div
         className={cn(
-          'pointer-events-auto mx-auto flex w-full max-w-[2048px] items-center justify-between rounded-[20px] border border-white/8 px-4 py-3 transition-all duration-500 md:px-7 md:py-5',
+          'pointer-events-auto mx-auto flex w-full max-w-[2048px] items-center justify-between rounded-[20px] px-4 py-3 transition-all duration-500 md:px-7 md:py-5',
           isScrolled
-            ? 'bg-[#1b1918]/88 shadow-[0_24px_70px_rgba(0,0,0,0.32)] backdrop-blur-xl'
-            : 'bg-[#1d1a19]/95'
+            ? 'bg-[#1b1918]/88 border border-white/8 shadow-[0_24px_70px_rgba(0,0,0,0.32)] backdrop-blur-xl'
+            : 'bg-transparent border-transparent'
         )}
       >
         <a href="#" className="flex items-center gap-2">
