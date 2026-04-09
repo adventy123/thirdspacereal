@@ -13,7 +13,7 @@ const logos = [
 
 export const LogoTicker = () => {
   return (
-    <section className="overflow-hidden bg-[#060403] px-3 pb-[4.5rem] pt-6 md:px-5 md:pb-24 md:pt-10">
+    <section className="overflow-hidden bg-[#F2F2F0] px-3 py-[4.5rem] md:px-5 md:py-24">
       <div className="mx-auto max-w-[2048px]">
         <div className="mb-12 flex items-center gap-3 px-2">
           <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-brand-grey">[ Moving Forward ]</span>
@@ -26,7 +26,7 @@ export const LogoTicker = () => {
               <img
                 src={logo.url}
                 alt={logo.name}
-                className="h-8 w-auto grayscale opacity-38 invert transition-all duration-500 hover:opacity-100 hover:grayscale-0 md:h-10"
+                className="h-8 w-auto grayscale opacity-38 transition-all duration-500 hover:opacity-100 hover:grayscale-0 md:h-10"
                 referrerPolicy="no-referrer"
               />
             </div>
