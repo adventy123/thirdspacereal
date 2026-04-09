@@ -27,8 +27,8 @@ export const Hero = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-brand-beige p-2 md:p-3 h-[100svh] min-h-[600px] flex flex-col">
-      <div className="relative flex flex-1 w-full overflow-hidden rounded-xl bg-[#060403] shadow-[0_26px_90px_rgba(20,20,20,0.18)]">
+    <section className="relative overflow-hidden bg-[#060403] p-2 md:p-3 h-[100svh] min-h-[600px] flex flex-col">
+      <div className="relative flex flex-1 w-full overflow-hidden rounded-xl rounded-b-none bg-[#060403]">
         <div className="absolute inset-0 z-0 bg-[#060403]">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_65%,rgba(224,90,30,0.95)_0%,rgba(168,36,10,0.85)_25%,rgba(50,8,4,0.7)_55%,rgba(6,4,3,0.98)_85%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0)_50%)]" />
