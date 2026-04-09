@@ -72,7 +72,7 @@ export const AboutUs = () => {
             className="lg:col-span-5 bg-[#111] border border-white/5 rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden"
           >
             <div className="relative z-10">
-              <h3 className="text-xl font-medium text-brand-offwhite mb-4">Based in Quebec, Canada</h3>
+              <h3 className="text-xl font-medium text-brand-offwhite mb-4">Based in Los Angeles, California</h3>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                 <span className="text-[10px] font-mono uppercase tracking-widest text-brand-grey">Available Worldwide</span>
@@ -97,27 +97,27 @@ export const AboutUs = () => {
               <div className="flex flex-col gap-4">
                 <h3 className="text-3xl font-medium text-brand-offwhite tracking-tight">The Founder</h3>
                 <p className="text-brand-grey text-sm leading-relaxed">
-                  Jay founded Stōkt in 2019 after spending the early part of his career in agencies. His ambition has always been to bring movement into traditionally static brand systems, a vision now fully aligned with today’s digital landscape.
+                  Ian founded ThirdSpace after spending the early part of his career in agencies. His ambition has always been to bring movement into traditionally static brand systems, a vision now fully aligned with today’s digital landscape.
                 </p>
                 <p className="text-brand-grey text-sm leading-relaxed">
                   His work blends art direction, motion, and web development, with a focus on cohesive, motion-driven brand systems. Believing aesthetics only matter when they serve a clear purpose.
                 </p>
               </div>
               <button className="flex items-center gap-2 text-brand-offwhite hover:text-brand-orange transition-colors text-xs font-mono uppercase w-fit">
-                <span>Work with Jay</span>
+                <span>Work with Ian</span>
                 <ArrowRight size={14} />
               </button>
             </div>
             <div className="relative aspect-square rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
               <img 
                 src="https://framerusercontent.com/images/0OJxePdXlSnOuYrBCi4z3nrwBY.png" 
-                alt="Jay Nadeau" 
+                alt="Ian Lagac" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute bottom-6 left-6 flex flex-col gap-1">
-                <span className="text-xl font-medium text-white">Jay Nadeau</span>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-white/70">Founder & Creative Director</span>
+                <span className="text-xl font-medium text-white">Ian Lagac</span>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-white/70">Founder and CEO</span>
               </div>
             </div>
           </motion.div>
