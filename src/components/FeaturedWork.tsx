@@ -94,7 +94,7 @@ const ProjectCard = ({ project }: { project: typeof projects[0], key?: string })
           <h3 className="text-2xl md:text-3xl font-medium text-brand-offwhite tracking-tight">{project.title}</h3>
           <div className="flex flex-wrap gap-2">
             {project.tags.map(tag => (
-              <span key={tag} className="px-3 py-1 bg-brand-orange/20 backdrop-blur-md border border-brand-orange/30 rounded-full text-[10px] font-mono uppercase tracking-wider text-brand-offwhite">
+              <span key={tag} className="px-3 py-1 bg-white/10 backdrop-blur-md border border-white/10 rounded-full text-[10px] font-mono uppercase tracking-wider text-brand-offwhite">
                 {tag}
               </span>
             ))}
@@ -107,8 +107,8 @@ const ProjectCard = ({ project }: { project: typeof projects[0], key?: string })
 
 export const FeaturedWork = () => {
   return (
-    <section id="portfolio" className="py-32 bg-brand-beige">
-      <div className="w-full px-11 md:px-[52px] lg:px-[68px]">
+    <section id="portfolio" className="py-32 bg-brand-beige px-4 md:px-8">
+      <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
@@ -120,7 +120,7 @@ export const FeaturedWork = () => {
             </h2>
           </div>
           
-          <button className="group flex items-center gap-2 bg-brand-orange text-brand-offwhite px-6 py-3 rounded-xl font-mono text-xs uppercase tracking-wider hover:bg-brand-orange-deep transition-all duration-300 shadow-[0_14px_34px_rgba(179,39,44,0.2)]">
+          <button className="group flex items-center gap-2 bg-brand-dark text-brand-offwhite px-6 py-3 rounded-xl font-mono text-xs uppercase tracking-wider hover:bg-brand-orange transition-all duration-300">
             <span>All Work</span>
             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </button>

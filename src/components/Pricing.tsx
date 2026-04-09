@@ -52,8 +52,8 @@ const pricingPlans = [
 
 export const Pricing = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
   return (
-    <section id="pricing" className="py-32 bg-brand-beige">
-      <div className="w-full px-11 md:px-[52px] lg:px-[68px]">
+    <section id="pricing" className="py-32 bg-brand-beige px-4 md:px-8">
+      <div className="max-w-7xl mx-auto">
         <div className="flex flex-col gap-12 mb-20">
           <div className="flex items-center gap-3">
             <span className="text-brand-grey font-mono text-[10px] uppercase tracking-widest">( Investment )</span>
@@ -80,7 +80,7 @@ export const Pricing = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`relative flex flex-col p-8 rounded-3xl border ${
                 plan.popular 
-                  ? 'bg-brand-orange border-brand-orange shadow-2xl scale-105 z-10' 
+                  ? 'bg-brand-dark border-brand-dark shadow-2xl scale-105 z-10' 
                   : 'bg-white border-black/5'
               }`}
             >
@@ -95,24 +95,24 @@ export const Pricing = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
                   {plan.name}
                 </h3>
                 <div className="flex items-baseline gap-1">
-                  <span className={`text-sm font-mono ${plan.popular ? 'text-white/72' : 'text-brand-grey'}`}>From</span>
+                  <span className={`text-sm font-mono ${plan.popular ? 'text-brand-grey' : 'text-brand-grey'}`}>From</span>
                   <span className={`text-4xl font-medium tracking-tighter ${plan.popular ? 'text-brand-offwhite' : 'text-brand-dark'}`}>
                     ${plan.price}
                   </span>
                 </div>
-                <p className={`mt-4 text-sm leading-relaxed ${plan.popular ? 'text-white/76' : 'text-brand-grey'}`}>
+                <p className={`mt-4 text-sm leading-relaxed ${plan.popular ? 'text-brand-grey' : 'text-brand-grey'}`}>
                   {plan.description}
                 </p>
               </div>
 
               <div className="flex-grow flex flex-col gap-4 mb-10">
-                <span className={`text-[10px] font-mono uppercase tracking-widest ${plan.popular ? 'text-white/72' : 'text-brand-grey'}`}>
+                <span className={`text-[10px] font-mono uppercase tracking-widest ${plan.popular ? 'text-brand-grey' : 'text-brand-grey'}`}>
                   What's included:
                 </span>
                 <ul className="flex flex-col gap-3">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
-                      <div className={`flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${plan.popular ? 'bg-white/18 text-white' : 'bg-brand-orange/10 text-brand-orange'}`}>
+                      <div className={`flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${plan.popular ? 'bg-brand-orange/20 text-brand-orange' : 'bg-brand-orange/10 text-brand-orange'}`}>
                         <Check size={10} />
                       </div>
                       <span className={`text-xs ${plan.popular ? 'text-brand-offwhite' : 'text-brand-dark'}`}>
@@ -127,8 +127,8 @@ export const Pricing = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
                 onClick={onOpenQuote}
                 className={`group flex items-center justify-center gap-2 w-full py-4 rounded-2xl font-mono text-[10px] uppercase tracking-widest transition-all duration-300 ${
                   plan.popular
-                    ? 'bg-brand-offwhite text-brand-dark hover:bg-brand-orange-deep hover:text-white'
-                    : 'bg-brand-orange text-brand-offwhite hover:bg-brand-orange-deep'
+                    ? 'bg-brand-offwhite text-brand-dark hover:bg-brand-orange hover:text-white'
+                    : 'bg-brand-dark text-brand-offwhite hover:bg-brand-orange'
                 }`}
               >
                 <span>{plan.cta}</span>
