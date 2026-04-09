@@ -50,7 +50,7 @@ export const LocationGlobe = ({ markerLabel }: LocationGlobeProps) => {
        globeEl.current.controls().autoRotateSpeed = 1;
        globeEl.current.controls().enableZoom = false;
        // Frame the camera looking exactly at Los Angeles
-       globeEl.current.pointOfView({ lat: 34.05, lng: -118.24, altitude: 2 });
+       globeEl.current.pointOfView({ lat: 34.05, lng: -118.24, altitude: 1.6 });
     }
   }, [dimensions.width]);
 
@@ -63,7 +63,7 @@ export const LocationGlobe = ({ markerLabel }: LocationGlobeProps) => {
   return (
     <div 
       ref={containerRef} 
-      className="w-full h-full min-h-[400px] flex justify-center items-center cursor-grab active:cursor-grabbing"
+      className="aspect-square flex justify-center items-center cursor-grab active:cursor-grabbing"
       aria-label={markerLabel}
     >
       {dimensions.width > 0 && coreMaterial && (
