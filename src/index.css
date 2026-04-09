@@ -15,6 +15,15 @@
 }
 
 @layer base {
+  html, body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;    /* Firefox */
+  }
+
+  html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;            /* Chrome, Safari and Opera */
+  }
+
   body {
     @apply bg-brand-beige text-brand-dark font-sans antialiased selection:bg-brand-orange selection:text-white;
   }
