@@ -54,7 +54,7 @@ export const Hero = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
           className="relative z-20 flex h-full w-full flex-col justify-center px-8 pt-16 md:px-16 lg:px-24"
         >
           <div className="max-w-[900px]">
-            <motion.div variants={itemVariants} className="mb-8 flex items-center gap-2">
+            <motion.div variants={itemVariants} className="mb-4 flex items-center gap-2">
               <span className="font-mono text-[10px] uppercase tracking-[0.26em] text-white/50">( We are ThirdSpace )</span>
               <ArrowRight size={10} className="text-white/50" />
             </motion.div>
@@ -66,23 +66,23 @@ export const Hero = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
               MOVING BRANDS<br />FORWARD
             </motion.h1>
 
-            <motion.div variants={itemVariants} className="mt-8 max-w-[28rem]">
+            <motion.div variants={itemVariants} className="mt-4 max-w-[28rem]">
               <p className="text-[13px] leading-[1.6] text-white/80 md:text-[14px]">
                 ThirdSpace builds motion-led brand systems, unifying identity, web, and digital storytelling into one evolving execution.
               </p>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="mt-12 flex flex-wrap gap-4">
+            <motion.div variants={itemVariants} className="mt-6 flex flex-wrap gap-4">
               <a
                 href="#portfolio"
-                className="flex items-center gap-2 rounded-full bg-[#f3f3f3] px-5 py-2.5 font-mono text-[9px] uppercase tracking-[0.24em] text-brand-dark transition-transform duration-300 hover:scale-105"
+                className="flex items-center gap-2 rounded-lg bg-[#f3f3f3] px-5 py-2.5 font-mono text-[9px] uppercase tracking-[0.24em] text-brand-dark transition-transform duration-300 hover:scale-105"
               >
                 <span>View Projects</span>
                 <ArrowRight size={10} />
               </a>
               <button
                 onClick={onOpenQuote}
-                className="flex items-center gap-2 rounded-full bg-[#181818] px-5 py-2.5 font-mono text-[9px] uppercase tracking-[0.24em] text-white transition-colors duration-300 hover:bg-[#252525]"
+                className="flex items-center gap-2 rounded-lg bg-[#181818] px-5 py-2.5 font-mono text-[9px] uppercase tracking-[0.24em] text-white transition-colors duration-300 hover:bg-[#252525]"
               >
                 <span>Get a quote</span>
                 <ArrowRight size={10} />
