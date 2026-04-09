@@ -22,9 +22,9 @@ const services = [
 
 export const Services = () => {
   return (
-    <section id="services" className="relative mx-3 mt-6 overflow-hidden rounded-xl rounded-b-none bg-brand-dark pb-16 pt-28 md:mx-5 lg:mx-6">
+    <section id="services" className="relative mx-3 mt-6 overflow-hidden rounded-xl rounded-b-none bg-[#141414] pb-16 pt-12 md:mx-5 lg:mx-6 md:pt-16">
       <div className="w-full px-8 md:px-[52px] lg:px-[68px]">
-        <div className="mb-20 flex flex-col gap-12">
+        <div className="mb-10 flex flex-col gap-6">
           <div className="flex items-center gap-3">
             <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-white/52">[ Services & Expertise ]</span>
             <ArrowDown size={12} className="text-white/38" />
@@ -47,9 +47,9 @@ export const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="group relative flex flex-col justify-between gap-8 rounded-[26px] border border-white/8 bg-[#0b0b0b] p-6 transition-all duration-500 hover:border-brand-orange/30 hover:bg-[linear-gradient(180deg,rgba(179,39,44,0.08)_0%,rgba(11,11,11,1)_46%)] md:p-8"
+              className="group relative flex flex-col justify-between gap-8 rounded-xl border border-white/8 bg-[#141414] p-6 transition-all duration-500 hover:border-brand-orange/30 hover:bg-[linear-gradient(180deg,rgba(255,90,0,0.06)_0%,rgba(20,20,20,1)_46%)] md:p-8"
             >
-              <div className="flex aspect-[1.04] items-center justify-center overflow-hidden rounded-[22px] bg-black ring-1 ring-white/5">
+              <div className="flex aspect-[1.04] items-center justify-center overflow-hidden rounded-[14px] bg-black ring-1 ring-white/5">
                 <img
                   src={service.image}
                   alt={service.title}

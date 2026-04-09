@@ -21,7 +21,7 @@ const tools = [
 
 export const AboutUs = () => {
   return (
-    <section id="about-us" className="-mt-px mx-3 overflow-hidden rounded-xl rounded-t-none bg-brand-dark pb-20 pt-[4.5rem] md:mx-5 lg:mx-6">
+    <section id="about-us" className="-mt-px mx-3 overflow-hidden rounded-xl rounded-t-none bg-[#141414] pb-20 pt-[4.5rem] md:mx-5 lg:mx-6">
       <div className="w-full px-8 md:px-[52px] lg:px-[68px]">
         <div className="mb-12 flex items-center gap-3">
           <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-white/52">[ About Us ]</span>
@@ -37,7 +37,7 @@ export const AboutUs = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex flex-1 flex-col items-start justify-center gap-3 rounded-[24px] border border-white/8 bg-[#0b0b0b] px-8 py-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
+                className="flex flex-1 flex-col items-start justify-center gap-3 rounded-xl border border-white/8 bg-[#141414] px-8 py-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
               >
                 <span className="text-[clamp(2.8rem,4vw,4.2rem)] leading-none tracking-[-0.08em] text-brand-offwhite">{stat.value}</span>
                 <span className="max-w-[10ch] text-[11px] tracking-[-0.03em] text-white/58">{stat.label}</span>
@@ -49,7 +49,7 @@ export const AboutUs = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="group relative min-h-[520px] overflow-hidden rounded-[24px] border border-white/8 bg-[#0b0b0b] p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] lg:col-span-4"
+            className="group relative min-h-[520px] overflow-hidden rounded-xl border border-white/8 bg-[#141414] p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] lg:col-span-4"
           >
             <div className="relative z-10 flex flex-col gap-1">
               <h3 className="text-[13px] tracking-[-0.04em] text-brand-offwhite">Framer Pro Expert & Partner</h3>
@@ -71,7 +71,7 @@ export const AboutUs = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative min-h-[520px] overflow-hidden rounded-[24px] border border-white/8 bg-[#090909] px-6 pt-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] md:px-8 lg:col-span-6 lg:px-10"
+            className="relative min-h-[520px] overflow-hidden rounded-xl border border-white/8 bg-[#141414] px-6 pt-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] md:px-8 lg:col-span-6 lg:px-10"
           >
             <div className="pointer-events-none absolute inset-x-[12%] top-10 h-24 rounded-full bg-white/5 blur-[90px]" />
             <div className="relative z-10 flex flex-col items-center gap-3 text-center">
@@ -97,7 +97,7 @@ export const AboutUs = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 gap-10 rounded-[24px] border border-white/5 bg-[#0b0b0b] p-8 md:grid-cols-[40%_1fr] md:p-10 lg:col-span-8 lg:gap-16"
+            className="grid grid-cols-1 gap-10 rounded-xl border border-white/5 bg-[#141414] p-8 md:grid-cols-[40%_1fr] md:p-10 lg:col-span-8 lg:gap-16"
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-xl grayscale transition-all duration-700 hover:grayscale-0">
               <div className="absolute inset-0 z-10 bg-brand-orange opacity-40 mix-blend-overlay transition-all duration-500 hover:opacity-0" />
@@ -138,7 +138,7 @@ export const AboutUs = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="group relative min-h-[400px] overflow-hidden rounded-[24px] border border-white/5 bg-[#0b0b0b] p-8 lg:col-span-4"
+            className="group relative min-h-[400px] overflow-hidden rounded-xl border border-white/5 bg-[#141414] p-8 lg:col-span-4"
           >
             <div className="relative z-10 flex flex-col gap-1">
               <h3 className="font-mono text-sm uppercase tracking-[0.24em] text-brand-offwhite">Framer Pro Expert</h3>
@@ -161,20 +161,20 @@ export const AboutUs = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative flex w-full flex-col justify-start gap-8 overflow-hidden rounded-[24px] border border-white/5 bg-[#0b0b0b] py-6 pl-6 pr-0 md:flex-row md:items-center md:gap-10 md:py-8 md:pl-8"
+          className="relative flex w-full flex-col justify-start gap-8 overflow-hidden rounded-xl border border-white/5 bg-[#141414] py-6 pl-6 pr-0 md:flex-row md:items-center md:gap-10 md:py-8 md:pl-8"
         >
-          <div className="z-20 flex flex-none flex-col gap-1 bg-[#0b0b0b]">
+          <div className="z-20 flex flex-none flex-col gap-1 bg-[#141414]">
             <h3 className="font-mono text-sm text-brand-offwhite">Everyday&apos;s Toolbox</h3>
             <p className="text-[10px] uppercase tracking-[0.22em] text-brand-grey">Mastered for every project.</p>
           </div>
           <div className="relative z-10 flex flex-1 items-center gap-4 overflow-x-hidden">
-            <div className="pointer-events-none absolute bottom-0 top-0 -left-1 z-20 w-8 bg-gradient-to-r from-[#0b0b0b] to-transparent" />
-            <div className="pointer-events-none absolute bottom-0 right-0 top-0 z-20 w-16 bg-gradient-to-l from-[#0b0b0b] to-transparent" />
+            <div className="pointer-events-none absolute bottom-0 top-0 -left-1 z-20 w-8 bg-gradient-to-r from-[#141414] to-transparent" />
+            <div className="pointer-events-none absolute bottom-0 right-0 top-0 z-20 w-16 bg-gradient-to-l from-[#141414] to-transparent" />
             <div className="flex w-max items-center gap-4">
               {[...tools, ...tools, ...tools, ...tools].map((tool, index) => (
                 <div
                   key={index}
-                  className="flex aspect-square w-12 flex-none items-center justify-center rounded-2xl border border-white/5 bg-brand-dark p-3 transition-colors hover:border-brand-orange/30 md:w-16"
+                  className="flex aspect-square w-12 flex-none items-center justify-center rounded-2xl border border-white/5 bg-[#141414] p-3 transition-colors hover:border-brand-orange/30 md:w-16"
                 >
                   <img
                     src={tool}
