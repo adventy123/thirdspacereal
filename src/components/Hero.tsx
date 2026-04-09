@@ -28,7 +28,7 @@ export const Hero = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
 
   return (
     <section className="relative min-h-screen bg-brand-beige p-3 md:p-5 overflow-hidden">
-      <div className="relative w-full h-full min-h-[calc(100vh-1.5rem)] md:min-h-[calc(100vh-2.5rem)] bg-brand-dark rounded-xl md:rounded-3xl overflow-hidden flex items-center justify-center shadow-lg">
+      <div className="relative w-full h-full min-h-[calc(100vh-1.5rem)] md:min-h-[calc(100vh-2.5rem)] bg-brand-dark rounded-xl overflow-hidden flex items-center justify-center shadow-lg">
         {/* Background Image/Video Placeholder */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_85%,_#ff6d28_0%,_#141414_80%)] opacity-90" />
