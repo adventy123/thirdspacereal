@@ -32,11 +32,11 @@ export const LocationGlobe = ({ markerLabel = "Interactive 3D Globe" }: Location
       theta: 0.15,
       dark: 1, 
       diffuse: 1.2,
-      mapSamples: 24000,
-      mapBrightness: 9,
-      baseColor: [0.55, 0.55, 0.55], // Bright wireframe dots
+      mapSamples: 16000,
+      mapBrightness: 6,
+      baseColor: [1, 1, 1], // Pure white dots for standard wireframe map
       markerColor: [0.443, 0.945, 0.369], // #71f15e location marker
-      glowColor: [0.03, 0.03, 0.03], 
+      glowColor: [0.1, 0.1, 0.1], // Gentle ambient glow
       markers: [
         { location: [34.0522, -118.2437], size: 0.08 } // LA Coordinates
       ],

@@ -75,7 +75,7 @@ export const AboutUs = () => {
             className="relative h-[400px] overflow-hidden rounded-xl border border-white/8 bg-[#141414] px-6 pt-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] md:px-8 lg:col-span-5 lg:px-10 flex flex-col"
           >
             <div className="pointer-events-none absolute inset-x-[12%] top-10 h-24 rounded-full bg-brand-orange/5 blur-[50px]" />
-            <div className="relative z-10 flex flex-col items-center gap-2 text-center">
+            <div className="relative z-20 flex flex-col items-center gap-2 text-center mt-2">
               <h3 className="text-[20px] md:text-[22px] tracking-tight text-[#f3efe7]">
                 Based in Los Angeles, California
               </h3>
@@ -87,7 +87,8 @@ export const AboutUs = () => {
                 <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/50">Available Worldwide</span>
               </div>
             </div>
-            <div className="relative flex-1 w-[120%] lg:w-[130%] self-center flex items-center justify-center translate-y-[15%]">
+            
+            <div className="absolute left-1/2 top-[58%] md:top-[55%] z-10 w-[160%] md:w-[140%] -translate-x-1/2 pointer-events-none">
               <LocationGlobe markerLabel="Wireframe globe centered on North America with Los Angeles highlighted" />
             </div>
           </motion.div>
