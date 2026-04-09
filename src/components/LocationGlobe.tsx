@@ -1,112 +1,101 @@
-import React, { useEffect, useRef } from 'react';
-import createGlobe from 'cobe';
+import React, { useEffect, useState, useRef } from 'react';
+import Globe from 'react-globe.gl';
+import * as THREE from 'three';
 
 type LocationGlobeProps = {
   markerLabel?: string;
 };
 
-export const LocationGlobe = ({ markerLabel = "Interactive 3D Globe" }: LocationGlobeProps) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const pointerInteracting = useRef<number | null>(null);
-  const pointerInteractionMovement = useRef(0);
-  const phiRef = useRef(0);
+export const LocationGlobe = ({ markerLabel }: LocationGlobeProps) => {
+  const globeEl = useRef<any>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [countries, setCountries] = useState({ features: [] });
+  const [coreMaterial, setCoreMaterial] = useState<any>(null);
 
   useEffect(() => {
-    let width = 0;
-    
-    const onResize = () => {
-      if (canvasRef.current) {
-        width = canvasRef.current.offsetWidth;
-      }
-    };
-    window.addEventListener('resize', onResize);
-    onResize();
-
-    if (!canvasRef.current) return;
-
-    const globe = createGlobe(canvasRef.current, {
-      devicePixelRatio: 2,
-      width: width * 2,
-      height: width * 2,
-      phi: 0,
-      theta: 0.15,
-      dark: 1, 
-      diffuse: 1.2,
-      mapSamples: 16000,
-      mapBrightness: 6,
-      baseColor: [1, 1, 1], // Pure white dots for standard wireframe map
-      markerColor: [0.443, 0.945, 0.369], // #71f15e location marker
-      glowColor: [0.1, 0.1, 0.1], // Gentle ambient glow
-      markers: [
-        { location: [34.0522, -118.2437], size: 0.08 } // LA Coordinates
-      ],
-      onRender: (state) => {
-        if (pointerInteracting.current === null) {
-          phiRef.current += 0.005;
-        }
-        
-        state.phi = phiRef.current + pointerInteractionMovement.current;
-        
-        if (width > 0) {
-          state.width = width * 2;
-          state.height = width * 2;
-        }
-      },
+    // Generate perfect internal spherical lat/long wireframe grid
+    const mat = new THREE.MeshPhongMaterial({
+      color: '#080808',
+      emissive: '#141414',
+      wireframe: true,
+      transparent: true,
+      opacity: 0.3
     });
+    setCoreMaterial(mat);
 
-    return () => {
-      globe.destroy();
-      window.removeEventListener('resize', onResize);
-    };
+    // Fetch GeoJSON for true boundary wireframes
+    fetch('https://raw.githubusercontent.com/vasturiano/react-globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson')
+      .then(res => res.json())
+      .then(setCountries);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (containerRef.current) {
+        setDimensions({
+          width: containerRef.current.clientWidth,
+          height: containerRef.current.clientHeight
+        });
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (globeEl.current && dimensions.width > 0) {
+       globeEl.current.controls().autoRotate = true;
+       globeEl.current.controls().autoRotateSpeed = 1;
+       globeEl.current.controls().enableZoom = false;
+       // Frame the camera looking exactly at Los Angeles
+       globeEl.current.pointOfView({ lat: 34.05, lng: -118.24, altitude: 2 });
+    }
+  }, [dimensions.width]);
+
+  // LA coordinate anchor
+  const markerData = [{
+    lat: 34.0522, 
+    lng: -118.2437,
+  }];
+
   return (
-    <div className="relative mx-auto w-full max-w-[1180px] aspect-square flex items-center justify-center pointer-events-auto">
-      <div className="pointer-events-none absolute inset-x-[14%] top-[10%] h-20 rounded-full bg-white/6 blur-3xl" />
-      <canvas
-        ref={canvasRef}
-        className="w-full h-full opacity-90 cursor-grab active:cursor-grabbing"
-        style={{ contain: 'layout paint size' }}
-        onPointerDown={(e) => {
-          pointerInteracting.current = e.clientX;
-          if (canvasRef.current) {
-            canvasRef.current.style.cursor = 'grabbing';
-          }
-        }}
-        onPointerUp={() => {
-          if (pointerInteracting.current !== null) {
-            phiRef.current += pointerInteractionMovement.current;
-            pointerInteractionMovement.current = 0;
-            pointerInteracting.current = null;
-          }
-          if (canvasRef.current) {
-            canvasRef.current.style.cursor = 'grab';
-          }
-        }}
-        onPointerOut={() => {
-          if (pointerInteracting.current !== null) {
-            phiRef.current += pointerInteractionMovement.current;
-            pointerInteractionMovement.current = 0;
-            pointerInteracting.current = null;
-          }
-          if (canvasRef.current) {
-            canvasRef.current.style.cursor = 'grab';
-          }
-        }}
-        onMouseMove={(e) => {
-          if (pointerInteracting.current !== null) {
-            const delta = e.clientX - pointerInteracting.current;
-            pointerInteractionMovement.current = delta / 200;
-          }
-        }}
-        onTouchMove={(e) => {
-          if (pointerInteracting.current !== null && e.touches[0]) {
-            const delta = e.touches[0].clientX - pointerInteracting.current;
-            pointerInteractionMovement.current = delta / 100;
-          }
-        }}
-        aria-label={markerLabel}
-      />
+    <div 
+      ref={containerRef} 
+      className="w-full h-full min-h-[400px] flex justify-center items-center cursor-grab active:cursor-grabbing"
+      aria-label={markerLabel}
+    >
+      <div className="pointer-events-none absolute inset-x-[14%] top-[10%] h-20 rounded-full bg-white/5 blur-[80px]" />
+      
+      {dimensions.width > 0 && coreMaterial && (
+        <Globe
+          ref={globeEl}
+          width={dimensions.width}
+          height={dimensions.height}
+          backgroundColor="rgba(0,0,0,0)"
+          showAtmosphere={true}
+          atmosphereColor="#ffffff"
+          atmosphereAltitude={0.15}
+          showGlobe={true}
+          globeMaterial={coreMaterial}
+          // Country polygon rendering
+          polygonsData={countries.features}
+          polygonCapColor={() => 'rgba(255, 255, 255, 0.03)'}
+          polygonSideColor={() => 'rgba(255, 255, 255, 0)'}
+          polygonStrokeColor={() => 'rgba(255, 255, 255, 0.8)'}
+          // Marker ping logic
+          ringsData={markerData}
+          ringColor={() => '#ff5a00'}
+          ringMaxRadius={4}
+          ringPropagationSpeed={2}
+          ringRepeatPeriod={1000}
+          labelsData={markerData}
+          labelDotRadius={2}
+          labelColor={() => '#ff5a00'}
+          labelText={() => ''}
+        />
+      )}
     </div>
   );
 };
