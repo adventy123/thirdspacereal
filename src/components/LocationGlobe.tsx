@@ -682,14 +682,14 @@ export const LocationGlobe = ({ markerLabel }: LocationGlobeProps) => {
               cx={markerProjection.x}
               cy={markerProjection.y}
               r="18"
-              fill="#ff6d28"
+              fill="#b3272c"
               opacity="0.16"
               filter={`url(#${markerGlowId})`}
             >
               <animate attributeName="r" values="16;28;16" dur="2.2s" repeatCount="indefinite" />
               <animate attributeName="opacity" values="0.18;0.3;0.18" dur="2.2s" repeatCount="indefinite" />
             </circle>
-            <circle cx={markerProjection.x} cy={markerProjection.y} r="7.5" fill="#ff6d28" />
+            <circle cx={markerProjection.x} cy={markerProjection.y} r="7.5" fill="#b3272c" />
             <circle cx={markerProjection.x} cy={markerProjection.y} r="2.4" fill="#fff7ef" />
           </g>
         )}

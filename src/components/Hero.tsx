@@ -31,7 +31,7 @@ export const Hero = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
       <div className="relative w-full h-full min-h-[calc(100vh-1.5rem)] md:min-h-[calc(100vh-2.5rem)] bg-brand-dark rounded-xl overflow-hidden flex items-center justify-center shadow-lg">
         {/* Background Image/Video Placeholder */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_65%_75%,_#ff6d28_0%,_#b3272c_40%,_#730f21_70%,_#141414_100%)] opacity-100" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_65%_75%,_#b3272c_0%,_#730f21_46%,_#141414_100%)] opacity-100" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#141414]/60 via-transparent to-[#141414] opacity-90" />
         </div>
 

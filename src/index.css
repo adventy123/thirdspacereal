@@ -8,8 +8,9 @@
 
   --color-brand-beige: #f2f2f0;
   --color-brand-dark: #141414;
-  --color-brand-orange: #ff6d28;
-  --color-brand-orange-deep: #b3272c;
+  --color-brand-orange: #b3272c;
+  --color-brand-orange-deep: #730f21;
+  --color-brand-burgundy: #730f21;
   --color-brand-grey: #a3a3a3;
   --color-brand-offwhite: #f2f2f0;
 }
@@ -29,7 +30,12 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tighter;
+    font-family: var(--font-heading);
+    letter-spacing: -0.05em;
+  }
+
+  p, li, blockquote, figcaption, label, input, textarea, select, button {
+    font-family: var(--font-sans);
   }
 
   .dark {
