@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'motion/react';
 import { Quote } from 'lucide-react';
 
@@ -52,6 +52,24 @@ const cardWidths = [
 ];
 
 export const Testimonials = () => {
+  const marqueeRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseEnter = () => {
+    if (marqueeRef.current) {
+      marqueeRef.current.getAnimations().forEach((anim) => {
+        anim.playbackRate = 0.25;
+      });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (marqueeRef.current) {
+      marqueeRef.current.getAnimations().forEach((anim) => {
+        anim.playbackRate = 1;
+      });
+    }
+  };
+
   return (
     <section id="testimonials" className="overflow-hidden bg-brand-beige py-32 md:py-48 flex flex-col items-center">
       <div className="w-full px-5 md:px-[52px] lg:px-[68px]">
@@ -84,13 +102,18 @@ export const Testimonials = () => {
         className="relative left-1/2 w-screen -translate-x-1/2"
       >
         <div className="group/testimonial overflow-hidden">
-          <div className="flex w-max gap-6 [--testimonial-gap:1.5rem] [--testimonial-speed:40s] animate-[testimonial-marquee_var(--testimonial-speed)_linear_infinite] py-10 group-hover/testimonial:[animation-play-state:paused]">
+          <div 
+            ref={marqueeRef}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="flex items-start w-max gap-6 [--testimonial-gap:1.5rem] animate-[testimonial-marquee_40s_linear_infinite] py-10"
+          >
             {marqueeTestimonials.map((testimonial, index) => (
               <article
                 key={`${testimonial.name}-${index}`}
                 className={`group/card relative shrink-0 rounded-2xl border border-black/5 bg-[#090909] px-7 py-8 text-brand-offwhite shadow-lg transition-colors duration-500 hover:bg-brand-orange hover:border-brand-orange ${cardWidths[index % cardWidths.length]} ${cardOffsets[index % cardOffsets.length]}`}
               >
-                <div className="flex min-h-[200px] flex-col justify-between gap-8 md:min-h-[240px]">
+                 <div className="flex flex-col justify-between gap-8 h-full min-h-[250px]">
                   <p className="relative z-10 text-[13px] leading-[1.65] tracking-tight text-[#f2eee7] transition-colors duration-500 group-hover/card:text-white md:text-[14px]">
                     {testimonial.content}
                   </p>
