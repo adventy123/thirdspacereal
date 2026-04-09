@@ -32,21 +32,16 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-brand-dark px-4 md:px-8 pb-12">
-      <div className="max-w-7xl mx-auto bg-black rounded-3xl p-8 md:p-16 flex flex-col gap-20">
+    <footer className="bg-[linear-gradient(180deg,#141414_0%,#251214_38%,#141414_100%)] px-8 lg:px-12 pt-16 pb-8 md:pt-24 min-h-[50vh] flex flex-col justify-between border-t border-brand-orange/20">
+      <div className="w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Brand Info */}
-          <div className="lg:col-span-4 flex flex-col gap-8">
-            <img 
-              src="https://framerusercontent.com/images/6C6SkLHoYirr9jR1KrYBlH0qsA.png" 
-              alt="Stōkt Logo" 
-              className="h-10 w-fit invert brightness-0"
-              referrerPolicy="no-referrer"
-            />
+          <div className="lg:col-span-4 flex flex-col gap-6">
+            <h2 className="text-3xl md:text-4xl text-brand-offwhite font-medium tracking-tight">ThirdSpace</h2>
             <div className="flex flex-col gap-2">
-              <p className="text-brand-grey text-sm">Saint-Sauveur — Canada</p>
-              <a href="mailto:hello@wearestokt.com" className="text-brand-offwhite hover:text-brand-orange transition-colors text-lg font-medium">
-                hello@wearestokt.com
+              <p className="text-brand-grey text-sm">Los Angeles, California</p>
+              <a href="mailto:hello@thirdspace.com" className="text-brand-grey hover:text-brand-orange transition-colors text-sm">
+                hello@thirdspace.com
               </a>
             </div>
           </div>
@@ -102,14 +97,12 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5 gap-4">
-          <p className="text-brand-grey text-xs font-mono uppercase tracking-widest">
-            © {currentYear} Stōkt Creative Co.
-          </p>
-          <p className="text-brand-grey text-xs font-mono uppercase tracking-widest">
-            All rights reserved.
-          </p>
-        </div>
+      </div>
+
+      <div className="flex flex-col pt-12 mt-24">
+        <p className="text-brand-grey text-xs">
+          © {currentYear} ThirdSpace. All rights reserved.
+        </p>
       </div>
     </footer>
   );

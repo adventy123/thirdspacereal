@@ -14,7 +14,7 @@ const logos = [
 export const LogoTicker = () => {
   return (
     <div className="py-20 bg-brand-beige overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 mb-12 flex items-center gap-3">
+      <div className="w-full px-11 md:px-[52px] lg:px-[68px] mb-12 flex items-center gap-3">
         <span className="text-brand-grey font-mono text-[10px] uppercase tracking-widest">( Moving Forward )</span>
         <div className="w-4 h-px bg-brand-grey/30" />
       </div>

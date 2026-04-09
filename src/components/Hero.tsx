@@ -27,12 +27,17 @@ export const Hero = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
   };
 
   return (
-    <section className="relative min-h-screen bg-brand-dark p-4 md:p-6 overflow-hidden">
-      <div className="relative w-full h-full min-h-[calc(100vh-3rem)] md:min-h-[calc(100vh-4rem)] rounded-[2rem] md:rounded-[3rem] overflow-hidden border-[4px] md:border-[8px] border-white flex items-center justify-center">
+    <section className="relative min-h-screen bg-brand-beige p-3 md:p-5 overflow-hidden">
+      <div className="relative w-full h-full min-h-[calc(100vh-1.5rem)] md:min-h-[calc(100vh-2.5rem)] bg-brand-dark rounded-xl overflow-hidden flex items-center justify-center shadow-lg">
         {/* Background Image/Video Placeholder */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_60%,_#d97706_0%,_#000000_70%)] opacity-80" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black" />
+          <div className="absolute inset-0 bg-[#080607]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_56%_88%,_#e5925f_0%,_#cd5933_16%,_#b3272c_38%,_#730f21_68%,_rgba(20,20,20,0.98)_100%)] opacity-95" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_52%_40%,_rgba(179,39,44,0.42)_0%,_rgba(115,15,33,0.12)_38%,_rgba(8,6,7,0)_65%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_8%_24%,_rgba(0,0,0,0.94)_0%,_rgba(0,0,0,0.84)_24%,_rgba(0,0,0,0.18)_48%,_rgba(0,0,0,0)_66%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_95%_12%,_rgba(0,0,0,0.82)_0%,_rgba(0,0,0,0.45)_22%,_rgba(0,0,0,0)_46%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.62)_0%,rgba(0,0,0,0.18)_24%,rgba(0,0,0,0.02)_48%,rgba(0,0,0,0.34)_78%,rgba(0,0,0,0.76)_100%)]" />
+          <div className="absolute inset-x-0 bottom-[-14%] h-[38%] bg-[radial-gradient(circle_at_50%_0%,_rgba(242,242,240,0.28)_0%,_rgba(242,242,240,0.08)_28%,_rgba(242,242,240,0)_72%)] blur-2xl" />
         </div>
 
         {/* 3D Motion Element Placeholder */}
@@ -40,13 +45,12 @@ export const Hero = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
           initial={{ y: 100, opacity: 0, scale: 0.9 }}
           animate={{ y: 0, opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-          className="absolute bottom-0 right-0 w-full max-w-3xl z-10 pointer-events-none"
+          className="absolute bottom-[-5%] right-[-5%] w-[120%] md:w-full max-w-4xl z-10 pointer-events-none"
         >
           <img 
-            src="https://framerusercontent.com/images/WLlehktco1TfNksSpRJQdyFeN5M.webp" 
-            alt="Motion Element" 
-            className="w-full h-auto object-contain translate-y-1/4 translate-x-1/4 md:translate-x-0"
-            referrerPolicy="no-referrer"
+            src="/hero-graphic.png" 
+            alt="ThirdSpace Graphic" 
+            className="w-full h-auto object-contain translate-y-[10%] translate-x-[5%]"
           />
         </motion.div>
 
@@ -54,36 +58,35 @@ export const Hero = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="relative z-20 w-full max-w-7xl mx-auto px-8 md:px-16 flex flex-col items-start gap-8"
+          className="relative z-20 w-full px-8 lg:px-12 flex flex-col items-start gap-6 md:gap-8 translate-y-[-5%]"
         >
           <motion.div variants={itemVariants} className="flex items-center gap-2">
-            <span className="text-brand-offwhite font-mono text-[10px] uppercase tracking-widest">[ We are Stōkt ]</span>
+            <span className="text-brand-offwhite font-mono text-[10px] uppercase tracking-widest">[ We are ThirdSpace ]</span>
             <ArrowRight size={12} className="text-brand-offwhite" />
           </motion.div>
 
           <motion.h1 
             variants={itemVariants}
-            className="text-4xl md:text-7xl lg:text-8xl font-medium tracking-tighter text-brand-offwhite leading-[0.9]"
+            className="text-5xl md:text-7xl lg:text-[6.5rem] font-bold tracking-tighter text-brand-offwhite leading-[0.9] -ml-1"
           >
-            MOVING <br />
-            BRANDS <br />
-            FORWARD
+            Let's Take <br />
+            Space Together
           </motion.h1>
 
-          <motion.div variants={itemVariants} className="max-w-sm">
-            <p className="text-brand-grey text-xs md:text-sm leading-relaxed">
-              Stōkt builds motion-driven brand systems, unifying branding, web, and motion into a single evolving execution.
+          <motion.div variants={itemVariants} className="max-w-xl">
+            <p className="text-[#f2f2f0]/72 text-sm md:text-base leading-relaxed">
+              We empower businesses by delivering innovative, data-driven strategies tailored to their unique goals. From crafting a strong brand identity to implementing high-impact digital marketing solutions, our team is dedicated to helping you establish a compelling presence in the digital space.
             </p>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mt-4">
-            <button className="flex items-center gap-2 bg-white text-black px-6 py-2 rounded-lg font-mono text-[10px] uppercase tracking-wider hover:bg-brand-orange hover:text-white transition-all duration-300">
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mt-2">
+            <button className="flex items-center gap-2 bg-brand-orange text-white px-6 py-2.5 rounded-[10px] font-mono text-[10px] uppercase tracking-wider hover:bg-brand-orange-deep transition-all duration-300 shadow-[0_14px_34px_rgba(179,39,44,0.26)]">
               <span>View Projects</span>
               <ArrowRight size={12} />
             </button>
             <button 
               onClick={onOpenQuote}
-              className="flex items-center gap-2 bg-black text-white px-6 py-2 rounded-lg font-mono text-[10px] uppercase tracking-wider hover:bg-brand-orange transition-all duration-300 border border-white/10"
+              className="flex items-center gap-2 bg-brand-dark/82 text-white px-6 py-2.5 rounded-[10px] font-mono text-[10px] uppercase tracking-wider hover:bg-brand-orange transition-all duration-300 border border-brand-orange/40"
             >
               <span>Get a quote</span>
               <ArrowRight size={12} />

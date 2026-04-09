@@ -25,8 +25,9 @@ const services = [
 
 export const Services = () => {
   return (
-    <section id="services" className="py-32 bg-brand-dark px-4 md:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="services" className="py-32 bg-brand-dark relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_50%_0%,rgba(179,39,44,0.24)_0%,rgba(179,39,44,0)_72%)]" />
+      <div className="w-full px-11 md:px-[52px] lg:px-[68px]">
         <div className="flex flex-col gap-12 mb-24">
           <div className="flex items-center gap-3">
             <span className="text-brand-grey font-mono text-[10px] uppercase tracking-widest text-white/50">( Services & Expertise )</span>
@@ -51,9 +52,9 @@ export const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="group relative bg-[#111] border border-white/5 rounded-2xl p-8 flex flex-col gap-12 hover:border-brand-orange/30 transition-all duration-500"
+              className="group relative bg-[#111] border border-brand-orange/15 rounded-2xl p-8 flex flex-col gap-12 hover:border-brand-orange/40 hover:bg-[linear-gradient(180deg,rgba(179,39,44,0.12)_0%,rgba(17,17,17,1)_55%)] transition-all duration-500"
             >
-              <div className="aspect-square rounded-xl overflow-hidden bg-brand-dark/50 flex items-center justify-center">
+              <div className="aspect-square rounded-xl overflow-hidden bg-brand-dark/50 flex items-center justify-center ring-1 ring-brand-orange/10">
                 <img 
                   src={service.video} 
                   alt={service.title} 
@@ -70,9 +71,9 @@ export const Services = () => {
                 <p className="text-brand-grey text-sm leading-relaxed">
                   {service.description}
                 </p>
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-brand-orange/12">
                   {service.tags.slice(0, 3).map(tag => (
-                    <span key={tag} className="text-[10px] font-mono uppercase tracking-wider text-brand-grey">
+                    <span key={tag} className="text-[10px] font-mono uppercase tracking-wider text-brand-orange/70">
                       {tag}
                     </span>
                   ))}

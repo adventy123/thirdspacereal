@@ -20,14 +20,13 @@ export const Navbar = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
     { name: 'Services', href: '#services' },
     { name: 'Pricing', href: '#pricing' },
     { name: 'About Us', href: '#about-us' },
-    { name: 'Motion Index', href: '#' },
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 md:p-8 pointer-events-none">
       <div 
         className={cn(
-          "flex items-center justify-between w-full max-w-7xl px-4 py-3 md:px-6 md:py-4 rounded-xl transition-all duration-500 pointer-events-auto",
+          "flex items-center justify-between w-full px-4 py-3 md:px-6 md:py-4 lg:px-4 rounded-xl transition-all duration-500 pointer-events-auto",
           isScrolled 
             ? "bg-brand-dark/50 backdrop-blur-xl border border-white/10 shadow-2xl" 
             : "bg-transparent"
@@ -36,10 +35,9 @@ export const Navbar = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
         <div className="flex items-center gap-8">
           <a href="/" className="flex items-center gap-2">
             <img 
-              src="https://framerusercontent.com/images/6C6SkLHoYirr9jR1KrYBlH0qsA.png" 
-              alt="Stōkt Logo" 
+              src="/logo.png" 
+              alt="ThirdSpace Logo" 
               className="h-6 md:h-8 invert brightness-0"
-              referrerPolicy="no-referrer"
             />
           </a>
         </div>
@@ -65,7 +63,7 @@ export const Navbar = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
           
           <button 
             onClick={onOpenQuote}
-            className="group flex items-center gap-2 bg-brand-beige text-brand-dark px-4 py-2 rounded-lg font-mono text-[10px] uppercase tracking-wider hover:bg-brand-orange hover:text-white transition-all duration-300"
+            className="group flex items-center gap-2 bg-brand-orange text-white px-4 py-2 rounded-lg font-mono text-[10px] uppercase tracking-wider hover:bg-brand-orange-deep transition-all duration-300 shadow-[0_10px_30px_rgba(179,39,44,0.25)]"
           >
             <span>Get an estimate</span>
             <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
