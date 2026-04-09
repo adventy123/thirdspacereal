@@ -156,17 +156,17 @@ export const AboutUs = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-[#111] border border-white/5 rounded-2xl py-6 md:py-8 pl-6 md:pl-8 pr-0 flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-16 w-full relative overflow-hidden"
+          className="bg-[#111] border border-white/5 rounded-2xl py-6 md:py-8 pl-6 md:pl-8 pr-0 flex flex-col md:flex-row md:items-center justify-start gap-8 md:gap-10 w-full relative overflow-hidden"
         >
-          <div className="flex flex-col gap-1 min-w-[200px] z-20 bg-[#111]">
+          <div className="flex flex-col gap-1 z-20 bg-[#111] flex-none">
             <h3 className="text-sm font-medium text-brand-offwhite tracking-widest font-mono">Everyday's Toolbox</h3>
             <p className="text-brand-grey text-[10px] uppercase tracking-widest">Mastered for every project.</p>
           </div>
-          <div className="flex items-center gap-4 overflow-x-hidden w-full relative z-10">
-            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#111] to-transparent z-20 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#111] to-transparent z-20 pointer-events-none" />
-            <div className="flex items-center gap-4 w-full w-max">
-              {[...tools, ...tools, ...tools].slice(0, 14).map((tool, index) => (
+          <div className="flex flex-1 items-center gap-4 overflow-x-hidden relative z-10">
+            <div className="absolute top-0 bottom-0 -left-1 w-8 bg-gradient-to-r from-[#111] to-transparent z-20 pointer-events-none" />
+            <div className="absolute top-0 bottom-0 right-0 w-16 bg-gradient-to-l from-[#111] to-transparent z-20 pointer-events-none" />
+            <div className="flex items-center gap-4 w-max">
+              {[...tools, ...tools, ...tools, ...tools].map((tool, index) => (
                 <div key={index} className="aspect-square flex-none w-12 md:w-16 bg-brand-dark border border-white/5 rounded-2xl p-3 flex items-center justify-center hover:border-brand-orange/30 transition-colors">
                   <img src={tool} alt="Tool" className="w-full h-full object-contain opacity-50 hover:opacity-100 transition-opacity drop-shadow-md" referrerPolicy="no-referrer" />
                 </div>
