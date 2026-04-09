@@ -52,18 +52,6 @@
   }
 }
 
-@keyframes marker-breathe {
-  0%, 100% {
-    transform: scale(0.92);
-    opacity: 0.82;
-  }
-
-  50% {
-    transform: scale(1.12);
-    opacity: 1;
-  }
-}
-
 @keyframes availability-pulse {
   0%, 100% {
     transform: scale(0.9);
