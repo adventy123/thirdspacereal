@@ -77,7 +77,7 @@ export const AboutUs = () => {
             <div className="pointer-events-none absolute inset-x-[12%] top-10 h-24 rounded-full bg-brand-orange/5 blur-[50px]" />
             <div className="relative z-10 flex flex-col items-center gap-2 text-center">
               <h3 className="text-[20px] md:text-[22px] tracking-tight text-[#f3efe7]">
-                Based in Quebec, Canada
+                Based in Los Angeles, California
               </h3>
               <div className="flex items-center gap-2 mt-1">
                 <div className="relative flex h-2 w-2 items-center justify-center">
@@ -87,8 +87,8 @@ export const AboutUs = () => {
                 <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/50">Available Worldwide</span>
               </div>
             </div>
-            <div className="relative mt-auto w-[160%] max-w-none md:w-[130%] lg:w-[140%] self-center translate-y-[28%]">
-              <LocationGlobe markerLabel="Wireframe globe centered on North America with Quebec highlighted" />
+            <div className="relative flex-1 w-[120%] lg:w-[130%] self-center flex items-center justify-center translate-y-[15%]">
+              <LocationGlobe markerLabel="Wireframe globe centered on North America with Los Angeles highlighted" />
             </div>
           </motion.div>
         </div>
