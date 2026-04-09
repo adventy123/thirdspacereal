@@ -20,7 +20,6 @@ export const Navbar = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
     { name: 'Services', href: '#services' },
     { name: 'Pricing', href: '#pricing' },
     { name: 'About Us', href: '#about-us' },
-    { name: 'Motion Index', href: '#' },
   ];
 
   return (
