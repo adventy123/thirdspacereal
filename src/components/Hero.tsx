@@ -62,7 +62,7 @@ export const Hero = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
 
           <motion.h1 
             variants={itemVariants}
-            className="text-5xl md:text-7xl lg:text-[6.5rem] font-medium tracking-tighter text-brand-offwhite leading-[0.9] -ml-1"
+            className="text-5xl md:text-7xl lg:text-[6.5rem] font-bold tracking-tighter text-brand-offwhite leading-[0.9] -ml-1"
           >
             Let's Take <br />
             Space Together
