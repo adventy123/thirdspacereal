@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowDown, ArrowRight } from 'lucide-react';
 
 export const Hero = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
   const containerVariants = {
@@ -27,66 +27,67 @@ export const Hero = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
   };
 
   return (
-    <section className="relative min-h-screen bg-brand-beige p-3 md:p-5 overflow-hidden">
-      <div className="relative w-full h-full min-h-[calc(100vh-1.5rem)] md:min-h-[calc(100vh-2.5rem)] bg-brand-dark rounded-xl overflow-hidden flex items-center justify-center shadow-lg">
-        {/* Background Image/Video Placeholder */}
+    <section className="relative min-h-screen overflow-hidden bg-brand-beige p-3 md:p-5">
+      <div className="relative flex min-h-[calc(100vh-1.5rem)] w-full items-center justify-center overflow-hidden rounded-[26px] bg-brand-dark shadow-lg md:min-h-[calc(100vh-2.5rem)]">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[#080607]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_56%_88%,_#f0a160_0%,_#d96c3a_18%,_#b3272c_42%,_#730f21_68%,_rgba(20,20,20,0.98)_100%)] opacity-95" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_52%_40%,_rgba(179,39,44,0.42)_0%,_rgba(115,15,33,0.12)_38%,_rgba(8,6,7,0)_65%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_8%_24%,_rgba(0,0,0,0.94)_0%,_rgba(0,0,0,0.84)_24%,_rgba(0,0,0,0.18)_48%,_rgba(0,0,0,0)_66%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_95%_12%,_rgba(0,0,0,0.82)_0%,_rgba(0,0,0,0.45)_22%,_rgba(0,0,0,0)_46%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.62)_0%,rgba(0,0,0,0.18)_24%,rgba(0,0,0,0.02)_48%,rgba(0,0,0,0.34)_78%,rgba(0,0,0,0.76)_100%)]" />
-          <div className="absolute inset-x-0 bottom-[-14%] h-[38%] bg-[radial-gradient(circle_at_50%_0%,_rgba(242,242,240,0.28)_0%,_rgba(242,242,240,0.08)_28%,_rgba(242,242,240,0)_72%)] blur-2xl" />
+          <div className="absolute inset-0 bg-[#070506]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_110%,_#f4c07d_0%,_#eb9250_20%,_#cf5f31_37%,_#982521_56%,_#4f0710_76%,_rgba(7,5,6,1)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_56%_48%,_rgba(179,39,44,0.34)_0%,_rgba(115,15,33,0.18)_30%,_rgba(7,5,6,0)_62%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_5%_28%,_rgba(0,0,0,0.98)_0%,_rgba(0,0,0,0.92)_24%,_rgba(0,0,0,0.4)_46%,_rgba(0,0,0,0)_68%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_96%_18%,_rgba(0,0,0,0.78)_0%,_rgba(0,0,0,0.34)_20%,_rgba(0,0,0,0)_42%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0.22)_18%,rgba(0,0,0,0.04)_43%,rgba(0,0,0,0.14)_62%,rgba(0,0,0,0.5)_82%,rgba(0,0,0,0.82)_100%)]" />
+          <div className="absolute inset-x-0 top-0 h-[18%] bg-[linear-gradient(180deg,rgba(0,0,0,0.42)_0%,rgba(0,0,0,0)_100%)]" />
+          <div className="absolute bottom-[-20%] left-1/2 h-[44%] w-[88%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_50%_0%,_rgba(242,242,240,0.34)_0%,_rgba(242,242,240,0.1)_22%,_rgba(242,242,240,0)_66%)] blur-3xl" />
         </div>
 
-        {/* 3D Motion Element Placeholder */}
-        <motion.div 
+        <motion.div
           initial={{ y: 100, opacity: 0, scale: 0.9 }}
           animate={{ y: 0, opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-          className="absolute bottom-[-5%] right-[-5%] w-[120%] md:w-full max-w-4xl z-10 pointer-events-none"
+          className="pointer-events-none absolute bottom-[-11%] right-[-18%] z-10 w-[155%] max-w-none md:bottom-[-18%] md:right-[-8%] md:w-[76%] md:max-w-[1320px]"
         >
-          <img 
-            src="/hero-graphic.png" 
-            alt="ThirdSpace Graphic" 
-            className="w-full h-auto object-contain translate-y-[10%] translate-x-[5%]"
-          />
+          <img src="/hero-graphic.png" alt="ThirdSpace Graphic" className="h-auto w-full object-contain" />
         </motion.div>
 
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="relative z-20 w-full px-8 lg:px-12 flex flex-col items-start gap-6 md:gap-8 translate-y-[-5%]"
+          className="relative z-20 flex w-full max-w-[1600px] flex-col items-start gap-5 px-8 pb-28 pt-32 md:gap-7 md:px-12 md:pb-20 md:pt-40 lg:px-12"
         >
           <motion.div variants={itemVariants} className="flex items-center gap-2">
-            <span className="text-brand-offwhite font-mono text-[10px] uppercase tracking-widest">[ We are ThirdSpace ]</span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-brand-offwhite">
+              [ We are ThirdSpace ]
+            </span>
             <ArrowRight size={12} className="text-brand-offwhite" />
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             variants={itemVariants}
-            className="text-5xl md:text-7xl lg:text-[6.5rem] font-bold tracking-tighter text-brand-offwhite leading-[0.9] -ml-1"
+            className="max-w-[7ch] text-[3.3rem] font-medium leading-[0.86] tracking-[-0.08em] text-brand-offwhite md:text-[5.5rem] lg:text-[6.6rem]"
           >
-            Let's Take <br />
+            Let&apos;s Take
+            <br />
             Space Together
           </motion.h1>
 
-          <motion.div variants={itemVariants} className="max-w-xl">
-            <p className="text-brand-grey text-sm md:text-base leading-relaxed">
-              We empower businesses by delivering innovative, data-driven strategies tailored to their unique goals. From crafting a strong brand identity to implementing high-impact digital marketing solutions, our team is dedicated to helping you establish a compelling presence in the digital space.
+          <motion.div variants={itemVariants} className="max-w-[520px]">
+            <p className="text-[15px] leading-[1.34] text-[#f2f2f0]/80 md:text-[1.05rem]">
+              We empower businesses by delivering innovative, data-driven strategies tailored to
+              their unique goals. From crafting a strong brand identity to implementing high-impact
+              digital marketing solutions, our team is dedicated to helping you establish a
+              compelling presence in the digital space.
             </p>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mt-2">
-            <button className="flex items-center gap-2 bg-white text-brand-dark px-6 py-2.5 rounded-[10px] font-mono text-[10px] uppercase tracking-wider hover:bg-brand-orange hover:text-white transition-all duration-300">
+          <motion.div variants={itemVariants} className="mt-2 flex flex-wrap gap-4">
+            <button className="flex items-center gap-2 rounded-[10px] bg-white px-5 py-2.5 font-mono text-[10px] uppercase tracking-[0.18em] text-brand-dark transition-all duration-300 hover:bg-brand-orange hover:text-white">
               <span>View Projects</span>
               <ArrowRight size={12} />
             </button>
-            <button 
+            <button
               onClick={onOpenQuote}
-              className="flex items-center gap-2 bg-brand-dark text-white px-6 py-2.5 rounded-[10px] font-mono text-[10px] uppercase tracking-wider hover:bg-brand-orange transition-all duration-300 border border-white/10"
+              className="flex items-center gap-2 rounded-[10px] border border-white/10 bg-brand-dark px-5 py-2.5 font-mono text-[10px] uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-brand-orange"
             >
               <span>Get a quote</span>
               <ArrowRight size={12} />
@@ -94,30 +95,29 @@ export const Hero = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
           </motion.div>
         </motion.div>
 
-        {/* Hero Indicators */}
-        <div className="absolute bottom-12 left-12 right-12 z-30 hidden lg:flex items-end justify-between pointer-events-none">
-          <motion.div 
+        <div className="pointer-events-none absolute bottom-12 left-12 right-12 z-30 hidden items-end justify-between lg:flex">
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
             className="flex flex-col gap-2"
           >
-            <span className="text-brand-grey font-mono text-[10px] uppercase tracking-widest">Scroll for more</span>
-            <motion.div 
+            <span className="font-sans text-[1.05rem] text-brand-offwhite">Scroll for more</span>
+            <motion.div
               animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-4 h-4 text-brand-grey"
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+              className="h-4 w-4 text-brand-offwhite"
             >
-              ↓
+              <ArrowDown size={16} />
             </motion.div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
           >
-            <span className="text-brand-grey font-mono text-[10px] uppercase tracking-widest">Est. in 2019</span>
+            <span className="font-sans text-[1.05rem] text-brand-offwhite">Est. in 2019</span>
           </motion.div>
         </div>
       </div>
