@@ -39,37 +39,37 @@ const testimonials = [
 
 const marqueeTestimonials = [...testimonials, ...testimonials];
 const cardOffsets = [
-  'mt-20 md:mt-36',
-  'mt-2 md:-mt-2',
-  'mt-28 md:mt-44',
-  'mt-10 md:mt-16',
+  'mt-16 md:mt-24',
+  'mt-2 md:mt-4',
+  'mt-24 md:mt-32',
+  'mt-8 md:mt-12',
 ];
 const cardWidths = [
-  'w-[308px] md:w-[360px]',
-  'w-[360px] md:w-[402px]',
-  'w-[336px] md:w-[392px]',
-  'w-[324px] md:w-[378px]',
+  'w-[280px] md:w-[316px]',
+  'w-[290px] md:w-[328px]',
+  'w-[285px] md:w-[320px]',
+  'w-[275px] md:w-[310px]',
 ];
 
 export const Testimonials = () => {
   return (
-    <section id="testimonials" className="overflow-hidden bg-brand-beige py-32 md:py-36">
-      <div className="w-full px-11 md:px-[52px] lg:px-[68px]">
+    <section id="testimonials" className="overflow-hidden bg-brand-beige py-24 md:py-32">
+      <div className="w-full px-5 md:px-[52px] lg:px-[68px]">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.65, ease: 'easeOut' }}
-          className="mx-auto mb-16 flex max-w-[980px] flex-col items-center gap-5 text-center md:mb-20"
+          className="mx-auto mb-16 flex max-w-[980px] flex-col items-center gap-4 text-center md:mb-20"
         >
-          <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-black/38">
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-black/38">
             [ Testimonials ]
           </span>
-          <div className="flex flex-col items-center gap-4">
-            <h2 className="max-w-[12ch] text-[clamp(3rem,7vw,6.1rem)] leading-[0.92] tracking-[-0.08em] text-brand-dark">
+          <div className="flex flex-col items-center gap-1">
+            <h2 className="max-w-[14ch] text-[clamp(2.5rem,5vw,4.5rem)] font-medium leading-[1] tracking-[-0.05em] text-brand-dark">
               Don't take our word for it<span className="text-brand-orange">*</span>
             </h2>
-            <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-brand-orange">
+            <p className="font-mono text-[9px] uppercase tracking-[0.28em] text-brand-orange mt-2">
               *Take theirs
             </p>
           </div>
@@ -84,32 +84,32 @@ export const Testimonials = () => {
         className="relative left-1/2 w-screen -translate-x-1/2"
       >
         <div className="group/testimonial overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)]">
-          <div className="flex w-max gap-[var(--testimonial-gap)] [--testimonial-gap:2rem] [--testimonial-speed:40s] animate-[testimonial-marquee_var(--testimonial-speed)_linear_infinite] py-5 group-hover/testimonial:[--testimonial-speed:110s]">
+          <div className="flex w-max gap-5 [--testimonial-gap:1.25rem] [--testimonial-speed:40s] animate-[testimonial-marquee_var(--testimonial-speed)_linear_infinite] py-5 group-hover/testimonial:[--testimonial-speed:110s]">
             {marqueeTestimonials.map((testimonial, index) => (
               <article
                 key={`${testimonial.name}-${index}`}
-                className={`group/card relative shrink-0 rounded-[28px] border border-black/8 bg-[#090909] px-8 py-9 text-brand-offwhite shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-[background-color,border-color] duration-500 hover:border-brand-orange/60 hover:bg-brand-orange ${cardWidths[index % cardWidths.length]} ${cardOffsets[index % cardOffsets.length]}`}
+                className={`group/card relative shrink-0 rounded-2xl border border-black/5 bg-[#090909] px-7 py-8 text-brand-offwhite shadow-lg transition-colors duration-500 hover:bg-brand-orange hover:border-brand-orange ${cardWidths[index % cardWidths.length]} ${cardOffsets[index % cardOffsets.length]}`}
               >
-                <div className="flex min-h-[290px] flex-col justify-between gap-10 md:min-h-[332px]">
-                  <p className="relative z-10 text-[1.1rem] leading-[1.45] tracking-[-0.045em] text-[#f2eee7] transition-colors duration-500 group-hover/card:text-white md:text-[1.32rem]">
+                <div className="flex min-h-[200px] flex-col justify-between gap-8 md:min-h-[220px]">
+                  <p className="relative z-10 text-[13px] leading-[1.65] tracking-tight text-[#f2eee7] transition-colors duration-500 group-hover/card:text-white">
                     {testimonial.content}
                   </p>
 
-                  <div className="relative z-10 flex items-center gap-4">
+                  <div className="relative z-10 flex items-center gap-3">
                     <img
                       src={testimonial.avatar}
                       alt={testimonial.name}
-                      className="h-12 w-12 rounded-full border border-white/10 object-cover transition-colors duration-500 group-hover/card:border-white/20"
+                      className="h-10 w-10 rounded-full object-cover shadow-sm transition-transform group-hover/card:scale-105"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="flex flex-col gap-1">
-                      <span className="text-[15px] leading-none tracking-[-0.04em] text-white">
+                    <div className="flex flex-col mt-1">
+                      <span className="text-[12px] font-medium tracking-tight text-white mb-1 leading-none">
                         {testimonial.name}
                       </span>
-                      <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-white/34 transition-colors duration-500 group-hover/card:text-white/72">
+                      <span className="font-mono text-[8px] uppercase tracking-[0.24em] text-white/40 transition-colors duration-500 group-hover/card:text-white/80">
                         {testimonial.title}
                       </span>
-                      <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-white/34 transition-colors duration-500 group-hover/card:text-white/72">
+                      <span className="font-mono text-[8px] uppercase tracking-[0.24em] text-white/40 mt-1 transition-colors duration-500 group-hover/card:text-white/80">
                         {testimonial.company}
                       </span>
                     </div>
@@ -117,9 +117,9 @@ export const Testimonials = () => {
                 </div>
 
                 <Quote
-                  size={54}
-                  strokeWidth={1.3}
-                  className="pointer-events-none absolute bottom-7 right-7 text-white/8 transition-colors duration-500 group-hover/card:text-white/16"
+                  size={46}
+                  strokeWidth={1.5}
+                  className="pointer-events-none absolute bottom-6 right-6 text-white/5 transition-colors duration-500 group-hover/card:text-white/20"
                 />
               </article>
             ))}
