@@ -76,7 +76,7 @@ export const AboutUs = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 gap-10 rounded-xl border border-white/5 bg-[#141414] p-8 md:grid-cols-[40%_1fr] md:p-10 lg:col-span-12 lg:grid-cols-[30%_1fr] lg:gap-16"
+            className="grid grid-cols-1 gap-10 rounded-xl border border-white/5 bg-[#141414] p-8 md:grid-cols-[40%_1fr] md:p-10 lg:col-span-10 lg:col-start-2 xl:col-span-8 xl:col-start-3 lg:gap-12"
           >
             <div className="group/photo relative aspect-[4/5] overflow-hidden rounded-xl transition-all duration-700">
               <div className="pointer-events-none absolute inset-0 z-10 bg-brand-orange opacity-0 mix-blend-color transition-opacity duration-500 group-hover/photo:opacity-40" />
