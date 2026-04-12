@@ -31,7 +31,7 @@ export const Footer = () => {
       <div className="flex min-h-[420px] flex-col justify-between rounded-xl bg-brand-dark px-6 py-10 md:px-8 md:py-12 lg:px-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="flex flex-col gap-5 lg:col-span-4">
-            <h2 className="text-[clamp(2rem,4vw,3rem)] leading-none tracking-[-0.06em] text-brand-offwhite">ThirdSpace Studio.</h2>
+            <h2 className="text-[clamp(2rem,4vw,3rem)] leading-none tracking-[-0.06em] text-brand-offwhite">ThirdSpace US.</h2>
             <div className="flex flex-col gap-1 text-sm text-white/62">
               <p>Los Angeles, California</p>
               <a href="mailto:hello@thirdspaceus.com" className="transition-colors hover:text-brand-offwhite">
