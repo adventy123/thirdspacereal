@@ -62,10 +62,10 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
-        'group relative aspect-video cursor-pointer overflow-hidden rounded-xl bg-brand-dark md:aspect-auto',
-        project.size === 'large' ? 'md:col-span-2 md:h-[520px] lg:h-[560px]' :
-        project.size === 'full' ? 'md:col-span-3 md:h-[480px] lg:h-[520px]' :
-        'md:col-span-1 md:h-[440px]'
+        'group relative aspect-video cursor-pointer overflow-hidden rounded-xl bg-brand-dark md:aspect-auto md:h-[520px] lg:h-[560px]',
+        project.size === 'large' ? 'md:col-span-2' :
+        project.size === 'full' ? 'md:col-span-3' :
+        'md:col-span-1'
       )}
     >
       <img
