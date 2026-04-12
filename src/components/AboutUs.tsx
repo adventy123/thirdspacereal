@@ -21,7 +21,7 @@ const tools = [
 
 export const AboutUs = () => {
   return (
-    <section id="about-us" className="-mt-px mx-3 overflow-hidden rounded-xl rounded-t-none bg-[#141414] pb-20 pt-[4.5rem] md:mx-5 lg:mx-6">
+    <section id="about-us" className="-mt-px mx-3 overflow-hidden rounded-xl rounded-t-none bg-[#141414] pb-20 pt-[4.5rem] md:mx-5">
       <div className="w-full px-8 md:px-[52px] lg:px-[68px]">
         <div className="mb-12 flex items-center gap-3">
           <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-white/52">[ About Us ]</span>
