@@ -17,7 +17,6 @@ export const Navbar = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
   }, []);
 
   const navLinks = [
-    { name: 'Work', href: '#portfolio' },
     { name: 'Services', href: '#services' },
     { name: 'About Us', href: '#about-us' },
     { name: 'Testimonials', href: '#testimonials' },

@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { LogoTicker } from './components/LogoTicker';
-import { FeaturedWork } from './components/FeaturedWork';
+
 import { Services } from './components/Services';
 import { AboutUs } from './components/AboutUs';
 import { Testimonials } from './components/Testimonials';
@@ -28,10 +28,9 @@ export default function App() {
       <main>
         <Hero onOpenQuote={openQuoteModal} />
         <LogoTicker />
-        <FeaturedWork />
+        <Testimonials />
         <Services />
         <AboutUs onOpenQuote={openQuoteModal} />
-        <Testimonials />
         <Pricing onOpenQuote={openQuoteModal} />
         <CTA onOpenQuote={openQuoteModal} />
       </main>
