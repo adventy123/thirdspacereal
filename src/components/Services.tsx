@@ -23,11 +23,11 @@ const services = [
   },
   {
     title: 'Media Creation',
-    description: 'We design bold, scalable visuals—built for impact, movement, and modern storytelling. Whether crafted by hand or powered by AI, these systems bring your brand to life.',
+    description: 'We capture your brand\'s story through stunning photography and high-quality video production, delivering compelling visual narratives tailored for modern platforms.',
     image: 'https://framerusercontent.com/images/oxZu28Q6bOJFLSa6KzaVpa1ZuI.png',
     features: [
-      '3D Design & Rendering', 'Custom Icon Systems', 'AI-Powered VFX', 
-      'Motion Design', 'AI-Generated Video', 'AI Imagery & Compositing'
+      'Photography', 'Video Production', 'Creative Direction', 
+      'Post-Production', 'Content Strategy', 'Visual Storytelling'
     ]
   }
 ];

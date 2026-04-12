@@ -29,7 +29,7 @@ export const AboutUs = () => {
         </div>
 
         <div className="mb-6 grid grid-cols-1 gap-6 lg:grid-cols-12">
-          <div className="flex flex-col gap-4 lg:col-span-3 lg:h-[400px]">
+          <div className="flex flex-col gap-4 lg:col-span-4 lg:h-[400px]">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -49,30 +49,7 @@ export const AboutUs = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="group relative h-[400px] overflow-hidden rounded-xl border border-white/8 bg-[#141414] p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] lg:col-span-4 flex flex-col justify-end"
-          >
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center pb-8 transition-transform duration-700 group-hover:scale-105">
-              <img
-                src="https://framerusercontent.com/images/tyrFyrRI41KJlV39p6QD9rGJdqQ.png"
-                alt="Framer Partner 3D"
-                className="h-auto w-[65%] object-contain drop-shadow-2xl opacity-90 mix-blend-screen"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div className="relative z-10 flex flex-col gap-1.5 mt-auto">
-              <h3 className="text-[12px] text-brand-offwhite font-medium tracking-tight">Framer Pro Expert & Partner</h3>
-              <button className="flex items-center gap-1.5 text-[11px] text-white/40 hover:text-white transition-colors w-fit">
-                <span>Learn More</span>
-                <ArrowRight size={10} />
-              </button>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="relative h-[400px] overflow-hidden rounded-xl border border-white/8 bg-[#141414] px-6 pt-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] md:px-8 lg:col-span-5 lg:px-10 flex flex-col"
+            className="relative h-[400px] overflow-hidden rounded-xl border border-white/8 bg-[#141414] px-6 pt-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] md:px-8 lg:col-span-8 lg:px-10 flex flex-col"
           >
 
             <div className="relative z-20 flex flex-col items-center gap-2 text-center mt-2">
@@ -99,7 +76,7 @@ export const AboutUs = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 gap-10 rounded-xl border border-white/5 bg-[#141414] p-8 md:grid-cols-[40%_1fr] md:p-10 lg:col-span-8 lg:gap-16"
+            className="grid grid-cols-1 gap-10 rounded-xl border border-white/5 bg-[#141414] p-8 md:grid-cols-[40%_1fr] md:p-10 lg:col-span-12 lg:grid-cols-[30%_1fr] lg:gap-16"
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-xl grayscale transition-all duration-700 hover:grayscale-0">
               <div className="absolute inset-0 z-10 bg-brand-orange opacity-40 mix-blend-overlay transition-all duration-500 hover:opacity-0" />
@@ -136,27 +113,7 @@ export const AboutUs = () => {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="group relative min-h-[400px] overflow-hidden rounded-xl border border-white/5 bg-[#141414] p-8 lg:col-span-4"
-          >
-            <div className="relative z-10 flex flex-col gap-1">
-              <h3 className="font-mono text-sm uppercase tracking-[0.24em] text-brand-offwhite">Framer Pro Expert</h3>
-              <button className="mb-1 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-brand-grey transition-colors hover:text-brand-orange">
-                <span>Learn More</span>
-                <ArrowRight size={10} />
-              </button>
-            </div>
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-30 transition-opacity duration-500 group-hover:opacity-60">
-              <img
-                src="https://framerusercontent.com/images/9MGIf21V2NJoMgEdygDwEv9OvRQ.png"
-                alt="Framer expert"
-                className="h-auto w-1/2 rotate-12"
-              />
-            </div>
-          </motion.div>
+
         </div>
 
         <motion.div
