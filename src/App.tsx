@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Lenis from 'lenis';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { LogoTicker } from './components/LogoTicker';
@@ -18,6 +19,21 @@ import { QuoteModal } from './components/QuoteModal';
 
 export default function App() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+
+  useEffect(() => {
+    const lenis = new Lenis();
+    
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    
+    requestAnimationFrame(raf);
+    
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   const openQuoteModal = () => setIsQuoteModalOpen(true);
   const closeQuoteModal = () => setIsQuoteModalOpen(false);
