@@ -30,7 +30,7 @@ export default function App() {
         <LogoTicker />
         <FeaturedWork />
         <Services />
-        <AboutUs />
+        <AboutUs onOpenQuote={openQuoteModal} />
         <Testimonials />
         <Pricing onOpenQuote={openQuoteModal} />
         <CTA onOpenQuote={openQuoteModal} />

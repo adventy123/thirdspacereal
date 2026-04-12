@@ -19,7 +19,7 @@ const tools = [
   'https://framerusercontent.com/images/VC5o6lscCcFa03XfPOdeZltqxdQ.png',
 ];
 
-export const AboutUs = () => {
+export const AboutUs = ({ onOpenQuote }: { onOpenQuote: () => void }) => {
   return (
     <section id="about-us" className="-mt-px mx-3 overflow-hidden rounded-xl rounded-t-none bg-[#141414] pb-20 pt-[4.5rem] md:mx-5">
       <div className="w-full px-8 md:px-[52px] lg:px-[68px]">
@@ -81,7 +81,7 @@ export const AboutUs = () => {
             <div className="relative aspect-[4/5] overflow-hidden rounded-xl grayscale transition-all duration-700 hover:grayscale-0">
               <div className="absolute inset-0 z-10 bg-brand-orange opacity-40 mix-blend-overlay transition-all duration-500 hover:opacity-0" />
               <img
-                src="https://framerusercontent.com/images/0OJxePdXlSnOuYrBCi4z3nrwBY.png"
+                src="/founder-photo.png"
                 alt="Ian Lagac"
                 className="h-full w-full object-cover"
                 referrerPolicy="no-referrer"
@@ -106,7 +106,10 @@ export const AboutUs = () => {
                 </p>
                 <div className="mt-4 font-mono text-xl text-brand-offwhite/50">*</div>
               </div>
-              <button className="flex w-fit items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-brand-grey transition-colors hover:text-brand-orange">
+              <button 
+                onClick={onOpenQuote}
+                className="flex w-fit items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-brand-grey transition-colors hover:text-brand-orange"
+              >
                 <span>Work with Ian</span>
                 <ArrowRight size={12} />
               </button>
