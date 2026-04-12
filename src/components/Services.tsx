@@ -41,7 +41,7 @@ export const Services = () => {
   };
 
   return (
-    <section id="services" className="relative mx-3 overflow-hidden rounded-xl rounded-b-none bg-[#141414] pb-16 pt-12 md:mx-5 md:pt-16">
+    <section id="services" className="relative mx-3 overflow-hidden rounded-xl rounded-b-none bg-[#141414] pb-8 pt-12 md:mx-5 md:pt-16">
       <div className="w-full px-5 md:px-[52px] lg:px-[68px]">
         <div className="mb-10 flex flex-col gap-6">
           <div className="flex items-center gap-3">
