@@ -11,7 +11,7 @@ const logos = [
 
 export const LogoTicker = () => {
   return (
-    <section className="overflow-hidden bg-[#F2F2F0] px-3 py-[4.5rem] md:px-5 md:py-24">
+    <section className="overflow-hidden bg-[#F2F2F0] px-3 pt-[4.5rem] pb-10 md:px-5 md:pt-24 md:pb-12">
       <div className="mx-auto max-w-[2048px]">
         <div className="mb-12 flex items-center gap-3 px-2">
           <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-brand-grey">[ Moving Forward ]</span>

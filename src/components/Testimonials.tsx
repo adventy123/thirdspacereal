@@ -71,7 +71,7 @@ export const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="overflow-hidden bg-brand-beige py-32 md:py-48 flex flex-col items-center">
+    <section id="testimonials" className="overflow-hidden bg-brand-beige pt-12 pb-32 md:pt-16 md:pb-48 flex flex-col items-center">
       <div className="w-full px-5 md:px-[52px] lg:px-[68px]">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
