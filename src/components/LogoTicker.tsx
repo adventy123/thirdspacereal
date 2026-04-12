@@ -2,13 +2,11 @@ import React from 'react';
 import { ArrowDown } from 'lucide-react';
 
 const logos = [
-  { name: 'Kimfu', url: 'https://framerusercontent.com/images/54ipZYE0Xs5Fw2s8RRC1Xw5MwOU.png' },
-  { name: 'Enzo Drew', url: 'https://framerusercontent.com/images/jzNbMKEQfKGZWGyXkWyH9UEnY.png' },
-  { name: 'Sidehit', url: 'https://framerusercontent.com/images/K18ubhU4pp49OY7JLgpFwvKV7lU.png' },
-  { name: 'Boombox', url: 'https://framerusercontent.com/images/t2JJSMOlfu93XD3jRMv9yDyUlsg.svg' },
-  { name: 'Outside', url: 'https://framerusercontent.com/images/sLzH4rMcDu6Hw2kF6Or04Y9g9BM.png' },
-  { name: 'Major', url: 'https://framerusercontent.com/images/UfWxvnwlpSLBegF6HT8zbaD9x8.svg' },
-  { name: 'Red Bull', url: 'https://framerusercontent.com/images/jY4sMQ7GRZcZ3BQUPxHlQlFWRo.png' },
+  { name: 'Emma - The Sleep Company', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Emma_The_Sleep_Company_Logo.svg/512px-Emma_The_Sleep_Company_Logo.svg.png' },
+  { name: 'Nike', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/512px-Logo_NIKE.svg.png' },
+  { name: 'Under Armour', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Under_armour_logo.svg/512px-Under_armour_logo.svg.png' },
+  { name: 'Sony', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Sony_logo.svg/512px-Sony_logo.svg.png' },
+  { name: 'Netflix', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/512px-Netflix_2015_logo.svg.png' }
 ];
 
 export const LogoTicker = () => {
